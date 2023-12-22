@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background: #8758ff;
   display: flex;
@@ -13,10 +14,19 @@ body {
 .App {
   text-align: center;
 }
+
+.TodoWrapper {
+  background: #1A1A40;
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
 .TodoForm {
   width: 100%;
   margin-bottom: 1rem;
 }
+
 .todo-input {
   outline: none;
   background: none;
