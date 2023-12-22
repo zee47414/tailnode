@@ -59,7 +59,7 @@ export const TodoWrapperLocalStorage = () => {
     return (
         <div className="TodoWrapper">
             <h1>Get Things Done!</h1>
-            
+
 
             <TodoForm addTodo={addTodo} setTodos={setTodos} />
             <div className="columns">

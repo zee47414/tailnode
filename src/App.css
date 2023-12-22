@@ -73,25 +73,37 @@ h2 {
   align-items: center;
   background: #8758ff;
   color: #fff;
+  box-sizing: border-box;
   padding: 0.75rem 1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
 }
 
-.fa-trash {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
+.icons-container {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .incompleted {
   color: #fff;
   cursor: pointer;
+
+}
+
+.Todo p {
+  overflow: scroll;
+  max-width: 250px;
+}
+
+.Todo p::-webkit-scrollbar {
+  width: 0;
 }
 
 .completed {
   color: #c5aeff;
   text-decoration: line-through;
   cursor: pointer;
+
 }
 
 .edit-icon,
@@ -104,9 +116,11 @@ h2 {
   flex-direction: row;
   gap: 2rem;
 }
-.reset-button-container{
+
+.reset-button-container {
   position: relative;
 }
+
 .reset-button {
   position: absolute;
   left: 0rem;
@@ -117,4 +131,19 @@ h2 {
   padding: 0.55rem;
   cursor: pointer;
   border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+  .columns {
+    flex-direction: column;
+  }
+  .todoFormContainer{
+    flex-direction: column;
+    gap: 0;
+    margin-top: 4rem;
+  }
+  .reset-button-container{
+    position: relative;
+    right: 1.65rem;
+  }
 }
