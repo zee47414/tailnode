@@ -3,8 +3,7 @@ import { TodoForm } from './TodoForm';
 import { v4 as uuidv4 } from 'uuid';
 import { Todo } from './Todo';
 import { EditTodoForm } from './EditTodoForm';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
+
 uuidv4();
 
 export const TodoWrapperLocalStorage = () => {
@@ -14,6 +13,12 @@ export const TodoWrapperLocalStorage = () => {
         const savedTodos = JSON.parse(localStorage.getItem('todos')) || [];
         setTodos(savedTodos);
     }, []);
+
+    const resetTodos = () => {
+        const initialTodos = [];
+        setTodos(initialTodos);
+        localStorage.setItem('todos', JSON.stringify(initialTodos));
+    };
 
     const completeTask = (id) => {
         const newTodos = todos.map((todo) => (todo.id === id ? { ...todo, completed: true } : todo));
@@ -54,7 +59,9 @@ export const TodoWrapperLocalStorage = () => {
     return (
         <div className="TodoWrapper">
             <h1>Get Things Done!</h1>
-            <TodoForm addTodo={addTodo} />
+            
+
+            <TodoForm addTodo={addTodo} setTodos={setTodos} />
             <div className="columns">
                 <div className="column">
                     <h2>Incomplete Tasks</h2>
